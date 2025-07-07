@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest identifier="_6p140JRgjEP_course_id" version="1.3" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+                        http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd
+                        http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd
+                        http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd
+                        http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>CAM 1.3</schemaversion>
+    <adlcp:location>metadata.xml</adlcp:location>
+  </metadata>
+  <organizations default="Module_2_-_Case_Study_Analysis_ORG">
+    <organization identifier="Module_2_-_Case_Study_Analysis_ORG" adlseq:objectivesGlobalToSystem="false">
+      <title>Module 2 - Case Study Analysis</title>
+      <item identifier="Module_2_-_Glossary_SCO" identifierref="__6p140JRgjEP_course_id_RES" isvisible="true">
+        <title>Module 2 - Case Study Analysis</title>
+      </item>
+      <metadata>
+        <adlcp:location>metadata.xml</adlcp:location>
+      </metadata>
+      <imsss:sequencing>
+        <imsss:controlMode choice="true" flow="true" />
+        <imsss:deliveryControls tracked="true" completionSetByContent="false" objectiveSetByContent="false" />
+      </imsss:sequencing>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__6p140JRgjEP_course_id_RES" type="webcontent" adlcp:scormType="sco" href="index_lms.html">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/6mSgHisbECY_80_DX488_DY488_CX383_CY199.png" />
+      <file href="mobile/6DOQd8QorBD_80_DX910_DY910_CX715_CY402.png" />
+      <file href="mobile/62dXWcvNncY6FyKIr7638M{Width=700, Height=520}Light_80_DX1400_DY1400_CX700_CY520.jpg" />
+      <file href="mobile/6mSgHisbECY_80_DX488_DY488_CX214_CY111.png" />
+      <file href="mobile/5y7V1mTIHhx_80_DX720_DY720_CX566_CY99.png" />
+      <file href="mobile/6h363NCNWJF6S3RljnqVjs{Width=700, Height=520}Light_80_DX1400_DY1400_CX700_CY520.jpg" />
+      <file href="mobile/6YBeB9xBdET_80_DX828_DY828_CX651_CY96.png" />
+      <file href="mobile/6UdoHKW3LSh6gZnHhn4Rpd{Width=700, Height=520}Light_80_DX1400_DY1400_CX700_CY520.jpg" />
+      <file href="mobile/5dEABZSAikT_80_DX634_DY634_CX498_CY188.jpg" />
+      <file href="mobile/6DwJtm0qOI86Oyx7EVgM79{Width=700, Height=520}Light_80_DX1400_DY1400_CX700_CY520.jpg" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5edINOoYEJ6.js" />
+      <file href="html5/data/js/5ibpb3syx2l.js" />
+      <file href="html5/data/js/5Zp6EedNn3B.js" />
+      <file href="html5/data/js/61BEhMty9Ex.js" />
+      <file href="html5/data/js/62DWjJEU9oq.js" />
+      <file href="html5/data/js/63J9MisqNWg.js" />
+      <file href="html5/data/js/6ak3vf5PW6R.js" />
+      <file href="html5/data/js/6fh4ofK1SnA.js" />
+      <file href="html5/data/js/6o8AgXHSuHL.js" />
+      <file href="html5/data/js/6Ot3NmfwJcY.js" />
+      <file href="html5/data/js/6SvdYa8OaW4.js" />
+      <file href="html5/data/js/6YduY1gtPTy.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>

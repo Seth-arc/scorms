@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest identifier="_6R6iflh4mj4_course_id" version="1.3" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+                        http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd
+                        http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd
+                        http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd
+                        http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>CAM 1.3</schemaversion>
+    <adlcp:location>metadata.xml</adlcp:location>
+  </metadata>
+  <organizations default="Development_Finance_data_points_ORG">
+    <organization identifier="Development_Finance_data_points_ORG" adlseq:objectivesGlobalToSystem="false">
+      <title>Development Finance data points</title>
+      <item identifier="Becoming_a_BRI_Member_SCO" identifierref="__6R6iflh4mj4_course_id_RES" isvisible="true">
+        <title>Development Finance data points</title>
+      </item>
+      <metadata>
+        <adlcp:location>metadata.xml</adlcp:location>
+      </metadata>
+      <imsss:sequencing>
+        <imsss:controlMode choice="true" flow="true" />
+        <imsss:deliveryControls tracked="true" completionSetByContent="false" objectiveSetByContent="false" />
+      </imsss:sequencing>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__6R6iflh4mj4_course_id_RES" type="webcontent" adlcp:scormType="sco" href="index_lms.html">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/6NgxGX6XXG5_P_0_477_1024_443_DX1440_DY1440_CX1024_CY444.jpg" />
+      <file href="mobile/5fEJdwQc73I_DX276_DY276_CX214_CY111.png" />
+      <file href="story_content/5ZUjbsUX62N_44100_56_0.mp3" />
+      <file href="mobile/6BXiW40VfJ5_DX308_DY308_CX242_CY226.png" />
+      <file href="mobile/5tW3qZJyKm8_DX308_DY308_CX242_CY226.png" />
+      <file href="mobile/6dezbZNxjkR_DX308_DY308_CX242_CY226.png" />
+      <file href="story_content/6rDT59lTMyl_44100_56_0.mp3" />
+      <file href="story_content/6ZA68tl6xDo_44100_56_0.mp3" />
+      <file href="mobile/6iO1y40ns5H_P_0_0_591_1024_DX1088_DY1088_CX491_CY850.png" />
+      <file href="story_content/5i34wzYqmNX_44100_56_0.mp3" />
+      <file href="mobile/5VHxhMln7yY_P_455_0_568_1024_DX1088_DY1088_CX472_CY850.png" />
+      <file href="story_content/5wZyJWAp1tp_44100_56_0.mp3" />
+      <file href="mobile/6OddGhoEm2s_P_0_0_591_1024_DX1088_DY1088_CX491_CY850.jpg" />
+      <file href="story_content/6Ef90H2IN1K_44100_56_0.mp3" />
+      <file href="mobile/5cCyncYw1Bu_DX1168_DY1168_CX730_CY730.jpg" />
+      <file href="mobile/6rQXJEu9qU8_DX640_DY640_CX503_CY503.jpg" />
+      <file href="story_content/6L4Wd58Ur0H_44100_56_0.mp3" />
+      <file href="mobile/6kfJ7DZ3naq_P_303_0_576_1024_DX1088_DY1088_CX478_CY849.jpg" />
+      <file href="story_content/613UIHh0aaR_44100_56_0.mp3" />
+      <file href="story_content/5eMUIQtzG2i_44100_56_0.mp3" />
+      <file href="story_content/6KsCCDhL8AH_44100_56_0.mp3" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5eNAd8SKnpf.js" />
+      <file href="html5/data/js/5tq16gVCm6Z.js" />
+      <file href="html5/data/js/64P1hDFYwqO.js" />
+      <file href="html5/data/js/65tKcjxiA0o.js" />
+      <file href="html5/data/js/68mEfWv3DJX.js" />
+      <file href="html5/data/js/69doKhIbHl5.js" />
+      <file href="html5/data/js/6BtNtmtqLtO.js" />
+      <file href="html5/data/js/6Gt1mgH9jk8.js" />
+      <file href="html5/data/js/6HbPxcWwteT.js" />
+      <file href="html5/data/js/6i5vFS1XhS1.js" />
+      <file href="html5/data/js/6ijiJ6Uen01.js" />
+      <file href="html5/data/js/6nC7JOPWdoC.js" />
+      <file href="html5/data/js/6RVqikTLQFY.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>
