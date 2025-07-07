@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCORM Learning Modules - Interactive Training</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: transparent;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #115740 0%, #2d8659 100%);
+            color: white;
+            margin-bottom: 40px;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(17, 87, 64, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .module-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+        
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #115740, #2d8659);
+        }
+        
+        .module-card.media::before {
+            background: linear-gradient(45deg, #11998e, #38ef7d);
+        }
+        
+        .module-card.bilateral::before {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+        
+        .module-card.bias::before {
+            background: linear-gradient(45deg, #fc4a1a, #f7b733);
+        }
+        
+        .module-card.decolonization::before {
+            background: linear-gradient(45deg, #8360c3, #2ebf91);
+        }
+        
+        .module-card.glossary::before {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+        }
+        
+        .module-card.finance-data::before {
+            background: linear-gradient(45deg, #43cea2, #185a9d);
+        }
+        
+        .module-card.case-study::before {
+            background: linear-gradient(45deg, #a8edea, #fed6e3);
+        }
+        
+        .module-card.china-finance::before {
+            background: linear-gradient(45deg, #fa709a, #fee140);
+        }
+        
+        .module-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+        }
+        
+        .module-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .module-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+            color: #999;
+        }
+        
+        .module-type {
+            background: #f8f9fa;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .launch-btn {
+            background: linear-gradient(45deg, #115740, #2d8659);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .launch-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(17, 87, 64, 0.4);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 0;
+            border: none;
+            border-radius: 12px;
+            width: 95%;
+            max-width: 1200px;
+            height: 90vh;
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #115740 0%, #2d8659 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-title {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            line-height: 1;
+        }
+        
+        .close:hover {
+            opacity: 0.7;
+        }
+        
+        .modal-iframe {
+            width: 100%;
+            height: calc(90vh - 80px);
+            border: none;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            margin-top: 40px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .modal-content {
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .modal-iframe {
+                height: calc(100vh - 80px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SCORM Learning Modules</h1>
+            <p>Interactive Training Platform</p>
+        </div>
+        
+        <div class="modules-grid">
+            <div class="module-card correlation" onclick="openModule('Module 1/Correlation vs Causation/story.html', 'Correlation vs Causation')">
+                <div class="module-title">Correlation vs Causation</div>
+                <div class="module-description">
+                    Learn to distinguish between correlation and causation in data analysis. 
+                    Master the fundamentals of statistical relationships and avoid common pitfalls.
+                </div>
+                <div class="module-meta">
+                    <span class="module-type">Statistics</span>
+                    <button class="launch-btn">Launch Module</button>
+                </div>
+            </div>
+            
+            <div class="module-card bias" onclick="openModule('Module 1/Identifying and Mitigating Bias in Data/story.html', 'Identifying and Mitigating Bias in Data')">
+                <div class="module-title">Identifying and Mitigating Bias in Data</div>
+                <div class="module-description">
+                    Learn to identify different types of bias in data collection and analysis. 
+                    Develop strategies to minimize bias and improve data quality.
+                </div>
+                <div class="module-meta">
+                    <span class="module-type">Data Science</span>
+                    <button class="launch-btn">Launch Module</button>
+                </div>
+            </div>
+            
+            <div class="module-card glossary" onclick="openModule('Module 1/Course Glossary/story.html', 'Course Glossary')">
+                <div class="module-title">Course Glossary</div>
+                <div class="module-description">
+                    Comprehensive glossary of terms and concepts used throughout the course. 
+                    Essential reference for understanding key terminology and definitions.
+                </div>
+                <div class="module-meta">
+                    <span class="module-type">Reference</span>
+                    <button class="launch-btn">Launch Module</button>
+                </div>
+            </div>
+            
+            <div class="module-card finance-data" onclick="openModule('Module 1/Development Finance data points/story.html', 'Development Finance Data Points')">
+                <div class="module-title">Development Finance Data Points</div>
+                <div class="module-description">
+                    Explore key data points and metrics in development finance. 
+                    Understand how to analyze and interpret financial development indicators.
+                </div>
+                <div class="module-meta">
+                    <span class="module-type">Finance</span>
+                    <button class="launch-btn">Launch Module</button>
+                </div>
+            </div>
+            
+            <div class="module-card media" onclick="openModule('Module 2/Media Integration in Data Journalism/story.html', 'Media Integration in Data Journalism')">
+                <div class="module-title">Media Integration in Data Journalism</div>
+                <div class="module-description">
+                    Explore how to effectively integrate multimedia elements into data-driven journalism. 
+                    Learn storytelling techniques that combine data with compelling visuals.
+                </div>
+                <div class="module-meta">
+                    <span class="module-type">Journalism</span>
+                    <button class="launch-btn">Launch Module</button>
+                </div>
+            </div>
+            
+            <div class="module-card case-study" onclick="openModule('Module 2/Module 2 - Case Study Analysis/story.html', 'Case Study Analysis')">
+                <div class="module-title">Case Study Analysis</div>
+                <div class="module-description">
+                    Master the art of case study analysis through practical examples. 
+                    Learn systematic approaches to examining real-world scenarios.
+                </div>
+                <div class="module-meta">
+                    <span class="module-type">Analysis</span>
+                    <button class="launch-btn">Launch Module</button>
+                </div>
+            </div>
+            
+            <div class="module-card bilateral" onclick="openModule('Module 4/Bilateral vs Multilateral Models/story.html', 'Bilateral vs Multilateral Models')">
+                <div class="module-title">Bilateral vs Multilateral Models</div>
+                <div class="module-description">
+                    Understand the differences between bilateral and multilateral development models. 
+                    Analyze various approaches to international cooperation and development.
+                </div>
+                <div class="module-meta">
+                    <span class="module-type">Development</span>
+                    <button class="launch-btn">Launch Module</button>
+                </div>
+            </div>
+            
+            <div class="module-card decolonization" onclick="openModule('Module 4/Decolonization and Development/story.html', 'Decolonization and Development')">
+                <div class="module-title">Decolonization and Development</div>
+                <div class="module-description">
+                    Examine the relationship between decolonization processes and development strategies. 
+                    Explore post-colonial perspectives on international development.
+                </div>
+                <div class="module-meta">
+                    <span class="module-type">Development</span>
+                    <button class="launch-btn">Launch Module</button>
+                </div>
+            </div>
+            
+            <div class="module-card china-finance" onclick="openModule('Module 4/China Development Finance Strategy_Menu/story.html', 'China Development Finance Strategy')">
+                <div class="module-title">China Development Finance Strategy</div>
+                <div class="module-description">
+                    Analyze China's approach to development finance and international investment. 
+                    Understand the Belt and Road Initiative and its global impact.
+                </div>
+                <div class="module-meta">
+                    <span class="module-type">Strategy</span>
+                    <button class="launch-btn">Launch Module</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&nbsp;</p>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="scormModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">SCORM Module</h2>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <iframe id="modalIframe" class="modal-iframe" src="" title="SCORM Module"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation allow-pointer-lock allow-orientation-lock allow-modals allow-downloads"></iframe>
+        </div>
+    </div>
+    
+    <script>
+        function openModule(src, title) {
+            const modal = document.getElementById('scormModal');
+            const iframe = document.getElementById('modalIframe');
+            const titleElement = document.getElementById('modalTitle');
+            
+            titleElement.textContent = title;
+            iframe.src = src;
+            modal.style.display = 'block';
+            
+            // Prevent body scrolling when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('scormModal');
+            const iframe = document.getElementById('modalIframe');
+            
+            modal.style.display = 'none';
+            iframe.src = '';
+            
+            // Restore body scrolling
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('scormModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        
+        // Handle keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // Handle iframe communication
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'scorm-complete') {
+                console.log('SCORM module completed:', event.data);
+                // Handle completion logic here
+            }
+        });
+    </script>
+</body>
+</html> 
