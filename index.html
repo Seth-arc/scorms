@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCORM Learning Modules - William & Mary</title>
+    <meta http-equiv="refresh" content="0; url=embed-all-modules.html">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #115740 0%, #2d8659 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .loading-container {
+            text-align: center;
+        }
+        
+        .loading-container h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .loading-container p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .manual-link {
+            margin-top: 30px;
+        }
+        
+        .manual-link a {
+            color: white;
+            text-decoration: underline;
+            font-size: 1.1em;
+        }
+        
+        .manual-link a:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <h1>SCORM Learning Modules</h1>
+        <p>Loading Interactive Training Platform...</p>
+        <div class="loading-spinner"></div>
+        <div class="manual-link">
+            <p>If you're not redirected automatically, <a href="embed-all-modules.html">click here</a>.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Fallback redirect if meta refresh doesn't work
+        setTimeout(function() {
+            window.location.href = 'embed-all-modules.html';
+        }, 2000);
+    </script>
+</body>
+</html> 
